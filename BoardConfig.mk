@@ -5,6 +5,13 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
+# Enable LWTUNNEL directly through configuration
+BOARD_KERNEL_CONFIG := $(call config_file, TB330XU_defconfig)
+
+# Set up the kernel options to enable LWTUNNEL
+TARGET_KERNEL_CONFIG += CONFIG_LWTUNNEL=y
+
+
 DEVICE_PATH := device/lenovo/TB330XU
 
 # For building with minimal manifest
